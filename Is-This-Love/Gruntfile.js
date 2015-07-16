@@ -64,9 +64,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-nodemon');
-	grunt.loadNpmTasks('grunt-concurrent');
 
 	grunt.registerTask('watch', ['watch']);
 	grunt.registerTask('production', ['concat', 'uglify', 'imagemin']);
