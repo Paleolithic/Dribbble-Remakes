@@ -49,6 +49,13 @@ module.exports = function(grunt){
 		            spawn: false,
 		        },
 		    },
+		    images: {
+		    	files: 'src/images/**/*.js',
+		    	tasks: ['imagemin'],
+		    	options: {
+		    		spawn: false,
+		    	}
+		    },
 		    css: {
 			    files: 'src/stylesheets/**/*.scss',
 			    tasks: ['sass'],
@@ -56,6 +63,9 @@ module.exports = function(grunt){
 			        spawn: false,
 			    }
 			},
+			html: {
+				files: '*.html',
+			}
 		},
 	});
 
@@ -65,6 +75,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('watch', ['watch']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
 	grunt.registerTask('production', ['concat', 'uglify', 'imagemin']);
 }

@@ -1,0 +1,140 @@
+html,
+body
+{
+    width: 100%;
+    height: 100%;
+
+    background-color: #d1d4d5;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.container
+{
+    position: relative;
+    top: 50%;
+
+    width: 350px;
+    height: 231px;
+    margin: 0 auto;
+
+    transform: translateY(-50%);
+	overflow: hidden;
+
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 15px 30px -20px rgba(0,0,0,.75);
+}
+
+.cover-art{
+	height: 65%;
+	background: url('images/hop-along.jpg');
+	background-size: cover;
+	background-position: center; 
+}
+
+.info{
+	padding: 14px;
+	height: 35%;
+	width: 100%;
+	display: inline-block;
+
+	div{ display: inline-block; }
+
+	.song-info, .control-image{ float: left; }
+	.options{ float: right; }
+
+	&:after{
+		content: '';
+		position: absolute;
+		left: 0px;
+		height: 2px;
+		width: 17%;
+		margin-top: -14px;
+		background-color: #F36A90;
+		z-index: 1;
+	}
+	&:before{
+		content: '';
+		position: absolute;
+		left: 0px;
+		height: 2px;
+		width: 100%;
+		margin-top: -14px;
+		background-color: grey;
+		z-index: 0;
+	}
+}
+
+.control-image{
+	background-image: url('images/controls-sheet.png');
+	cursor: pointer;
+}
+
+.play-pause-button{
+	background-position: 0 0;
+	height: 48px;
+	width: 48px;
+
+	&:hover{
+		background-position: 0 -46px;
+	}
+}
+
+.song-info{
+	padding-left: 7px;
+
+
+	h2, p{
+		margin: 2px 0px;
+		font-weight: lighter;
+	}
+
+	h2{
+		color: #86878E;
+	}
+
+	p{
+		color: #D0D0D0;
+		font-size: .75em;
+	}
+}
+
+.options{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.repeat-button{
+	background-position: -113px 0;
+	height: 28px;
+	width: 28px;
+
+	&:hover{
+		background-position: -113px -29px;
+	}
+}
+
+.back-button{
+	background-position: -56px 0;
+	height: 28px;
+	width: 28px;
+
+	&:hover{
+		background-position: -56px -28px;
+	}
+}
+
+.forward-button{
+	background-position: -85px 0;
+	height: 28px;
+	width: 28px;
+
+	&:hover{
+		background-position: -85px -28px;
+	}
+}
+
