@@ -2,24 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Is This Love?</title>
 	<link rel="stylesheet" href="dist/main.css">
 </head>
 <body>
 	<div class="container">
 		<div class="cover-art"></div>
+		<div class="time" data-before="14%">
+			<span class="amount" id="amount"></span>
+			<p class="cumulative" id="elapsed-time">0:00</p>
+			<p class="remaining" id="total-time">3:33</p>
+		</div>
 		<div class="info">
-			<div class="control-image play-pause-button"></div>
+			<div class="control-image play-pause-button paused" id="play-pause"></div>
 			<div class="song-info">
 				<h2>Waitress</h2>
 				<p>Hop Along</p>
 			</div>
 			<div class="options">
-				<div class="control-image repeat-button"></div>
+				<div class="control-image repeat-button" id="repeat"></div>
 				<div class="control-image back-button"></div>
 				<div class="control-image forward-button"></div>
 			</div>
 		</div>
 	</div>
 </body>
+<footer>
+	<audio src="dist/waitress.mp3" preload="auto" id="audio"></audio>
+	<script src="dist/scripts/production.min.js"></script>
+</footer>
 </html>

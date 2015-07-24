@@ -1,140 +1,163 @@
-html,
-body
-{
+html, body{
     width: 100%;
     height: 100%;
 
-    background-color: #d1d4d5;
+    background-color: #D1D4D5;
 }
 
 *{
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.container
-{
+.container{
     position: relative;
     top: 50%;
+
+    overflow: hidden;
 
     width: 350px;
     height: 231px;
     margin: 0 auto;
 
     transform: translateY(-50%);
-	overflow: hidden;
 
     border-radius: 14px;
-    background-color: #fff;
+    background-color: #FFF;
     box-shadow: 0 15px 30px -20px rgba(0,0,0,.75);
 }
 
 .cover-art{
-	height: 65%;
-	background: url('images/hop-along.jpg');
-	background-size: cover;
-	background-position: center; 
+    height: 65%;
+
+    background: url('images/hop-along.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.time{
+    display: block;
+
+    width: 100%;
+    height: 7%;
+    p{
+        font-size: .6em;
+
+        margin: 0;
+        padding: 7px 7px 0 7px;
+
+        color: #A1A2A2;
+    }
+    .cumulative{
+        float: left;
+    }
+    .remaining{
+        float: right;
+    }
+    .amount, &:before{
+        position: absolute;
+        left: 0;
+
+        height: 2px;
+
+        content: '';
+    }
+    .amount{
+        width: 0%;
+        background-color: #F36A90;
+    }
+    &:before{
+        width: 100%;
+        background-color: #A1A2A2;
+    }
 }
 
 .info{
-	padding: 14px;
-	height: 35%;
-	width: 100%;
-	display: inline-block;
+    display: inline-block;
 
-	div{ display: inline-block; }
-
-	.song-info, .control-image{ float: left; }
-	.options{ float: right; }
-
-	&:after{
-		content: '';
-		position: absolute;
-		left: 0px;
-		height: 2px;
-		width: 17%;
-		margin-top: -14px;
-		background-color: #F36A90;
-		z-index: 1;
-	}
-	&:before{
-		content: '';
-		position: absolute;
-		left: 0px;
-		height: 2px;
-		width: 100%;
-		margin-top: -14px;
-		background-color: grey;
-		z-index: 0;
-	}
+    width: 100%;
+    height: 28%;
+    padding: 7px 14px 0 14px;
+    .song-info, .control-image{
+        float: left;
+    }
+    .options{
+        float: right;
+    }
 }
 
+
 .control-image{
-	background-image: url('images/controls-sheet.png');
-	cursor: pointer;
+    cursor: pointer;
+
+    background-image: url('images/controls-sheet.png');
 }
 
 .play-pause-button{
-	background-position: 0 0;
-	height: 48px;
-	width: 48px;
+    width: 48px;
+    height: 48px;
 
-	&:hover{
-		background-position: 0 -46px;
-	}
+    background-position: 0 0;
+    &:hover, &.paused{
+        background-position: 0 -46px;
+    }
+    &.paused:hover{
+        background-position: 0 0;
+    }
 }
 
 .song-info{
-	padding-left: 7px;
+    padding-left: 7px;
+    h2, p{
+        font-weight: lighter;
 
+        margin: 2px 0;
+    }
+    h2{
+        color: #86878E;
+    }
+    p{
+        font-size: .75em;
 
-	h2, p{
-		margin: 2px 0px;
-		font-weight: lighter;
-	}
-
-	h2{
-		color: #86878E;
-	}
-
-	p{
-		color: #D0D0D0;
-		font-size: .75em;
-	}
+        color: #D0D0D0;
+    }
 }
 
 .options{
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+
+    transform: translateY(-70%);
 }
 
 .repeat-button{
-	background-position: -113px 0;
-	height: 28px;
-	width: 28px;
+    width: 28px;
+    height: 28px;
 
-	&:hover{
-		background-position: -113px -29px;
-	}
+    background-position: -113px 0;
+    &:hover, &.on-repeat{
+        background-position: -113px -29px;
+    }
+    &.on-repeat:hover{
+    	background-position: -113px 0;
+    }
 }
 
 .back-button{
-	background-position: -56px 0;
-	height: 28px;
-	width: 28px;
+    width: 28px;
+    height: 28px;
 
-	&:hover{
-		background-position: -56px -28px;
-	}
+    background-position: -56px 0;
+    &:hover{
+        background-position: -56px -28px;
+    }
 }
 
 .forward-button{
-	background-position: -85px 0;
-	height: 28px;
-	width: 28px;
+    width: 28px;
+    height: 28px;
 
-	&:hover{
-		background-position: -85px -28px;
-	}
+    background-position: -85px 0;
+    &:hover{
+        background-position: -85px -28px;
+    }
 }
-

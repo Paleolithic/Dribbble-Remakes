@@ -38,13 +38,21 @@ module.exports = function(grunt){
 		    } 
 		},
 
+		copy: {
+			main: {
+				expand: true,
+				src: 'src/*.mp3',
+				dest: 'dist/',
+			},
+		},
+
 		watch: {
 			options: {
 		        livereload: true,
 		    },
 		    scripts: {
 		        files: 'src/scripts/**/*.js',
-		        // tasks: ['concat', 'uglify'],
+		        tasks: ['concat', 'uglify'],
 		        options: {
 		            spawn: false,
 		        },
@@ -74,7 +82,8 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'watch']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'copy', 'watch']);
 	grunt.registerTask('production', ['concat', 'uglify', 'imagemin']);
 }
