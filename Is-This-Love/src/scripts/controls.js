@@ -12,6 +12,8 @@ var elapsed = 0;
 var seconds = 0;
 var minutes = 0;
 var length = 0;
+var percent = 0;
+audioPlayer.loop = repeating;
 
 function calcFormattedLength(){
 	var formattedMins = Math.floor(length / 60);
@@ -24,7 +26,6 @@ function calcFormattedLength(){
 }
 
 function checkTime(){
-
 	//Stop interval checking if percent at 100
 	if(percent >= 100){
 		if(repeating){
@@ -41,7 +42,7 @@ function checkTime(){
 
 	elapsed++ 
 	seconds++;
-	var percent = elapsed / length * 100;
+	percent = elapsed / length * 100;
 	amount.style.width = percent + "%";
 
 	if(seconds < 0){
@@ -62,14 +63,12 @@ function checkTime(){
 
 playPause.addEventListener("click", function(){
 	playPause.classList.toggle("paused");
+	playing = !playing;
 
-	if(!playing){
-		playing = true;
-		begun = true;
+	if(playing){
 		audioPlayer.play();
 		i = setInterval(checkTime, 1000);
 	} else{
-		playing = false;
 		audioPlayer.pause();
 		clearInterval(i);
 	}
@@ -77,7 +76,7 @@ playPause.addEventListener("click", function(){
 
 repeat.addEventListener("click", function(){
 	repeat.classList.toggle("on-repeat");
-	repeating = true;
+	repeating = !repeating;
 });
 
 audioPlayer.onloadeddata = function(){
@@ -85,6 +84,7 @@ audioPlayer.onloadeddata = function(){
 	totalTime.innerHTML = calcFormattedLength();
 }
 
+// var file = audioPlayer.
 
 
 
