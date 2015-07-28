@@ -4,6 +4,8 @@ var repeat 		= document.getElementById("repeat");
 var amount 		= document.getElementById("amount");
 var elapsedTime = document.getElementById("elapsed-time");
 var totalTime 	= document.getElementById("total-time");
+var back 		= document.getElementById("back");
+var forward 	= document.getElementById("forward");
 
 var playing 	= false;
 var repeating	= false;
@@ -40,18 +42,12 @@ function checkTime(){
 		}
 	}
 
-	elapsed++ 
-	seconds++;
+	elapsed++;
+	seconds = elapsed % 60;
+	minutes = Math.floor(elapsed / 60);
 	percent = elapsed / length * 100;
 	amount.style.width = percent + "%";
 
-	if(seconds < 0){
-		seconds = 0;
-	}
-	if(seconds >= 60){
-		seconds = 0;
-		minutes++; 
-	}
 	if(seconds < 10){
 		seconds = "0" + seconds;
 	}
@@ -60,6 +56,10 @@ function checkTime(){
 	elapsedTime.innerHTML = time;
 }
 
+audioPlayer.onloadeddata = function(){
+	length = Math.ceil(audioPlayer.duration);
+	totalTime.innerHTML = calcFormattedLength();
+}
 
 playPause.addEventListener("click", function(){
 	playPause.classList.toggle("paused");
@@ -79,14 +79,25 @@ repeat.addEventListener("click", function(){
 	repeating = !repeating;
 });
 
-audioPlayer.onloadeddata = function(){
-	length = Math.ceil(audioPlayer.duration);
-	totalTime.innerHTML = calcFormattedLength();
-}
 
-// var file = audioPlayer.
+back.addEventListener("click", function(){
+	if(elapsed >= 5)
+		elapsed -= 5;
+	else
+		elapsed = 0;
 
+	audioPlayer.currentTime = elapsed;
+});
 
+forward.addEventListener("click", function(){
+	if(elapsed <= length - 5)
+		elapsed += 5;
+	else
+		elapsed = length;
 
+	audioPlayer.currentTime = elapsed;
+});
 
-
+particlesJS.load('particles-js', 'dist/particles.json', function() {
+  console.log('callback - particles.js config loaded');
+});

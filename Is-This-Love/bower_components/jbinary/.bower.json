@@ -1,0 +1,15 @@
+{
+  "name": "jbinary",
+  "homepage": "https://github.com/jDataView/jBinary",
+  "version": "2.1.2",
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.2",
+    "commit": "bb27e77f61e571d3a3bf2f8114048bbca5e3e73d"
+  },
+  "_source": "git://github.com/jDataView/jBinary.git",
+  "_target": "~2.1.2",
+  "_originalSource": "jbinary",
+  "_direct": true
+}

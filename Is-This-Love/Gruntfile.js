@@ -4,7 +4,7 @@ module.exports = function(grunt){
 
 		concat:{
 			dist:{
-				src: "src/scripts/**/*.js",
+				src: ['src/scripts/particles.js', 'src/scripts/**/*.js'],
 				dest: "dist/scripts/production.js",
 			}
 		},
@@ -40,9 +40,10 @@ module.exports = function(grunt){
 
 		copy: {
 			main: {
-				expand: true,
-				src: 'src/*.mp3',
-				dest: 'dist/',
+				files: [
+					{expand: true, flatten: true, src: ['src/*.mp3'], dest: 'dist/'},
+					{expand: true, flatten: true, src: ['src/*.json'], dest: 'dist/'},
+				],
 			},
 		},
 
@@ -58,7 +59,7 @@ module.exports = function(grunt){
 		        },
 		    },
 		    images: {
-		    	files: 'src/images/**/*.js',
+		    	files: 'src/images/**/*',
 		    	tasks: ['imagemin'],
 		    	options: {
 		    		spawn: false,
