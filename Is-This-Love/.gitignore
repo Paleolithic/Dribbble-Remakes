@@ -1,2 +1,7 @@
 node_modules
+<<<<<<< HEAD
 dist
+*.mp3
+=======
+dist
+>>>>>>> master
