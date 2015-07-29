@@ -215,7 +215,7 @@ function initMp3Player(){
 	context = new AudioContext();
 	analyser = context.createAnalyser();
 	canvas = document.getElementById('analyser_render');
-	canvas.width=1000;//horizontal resolution (?) - increase for better looking text
+	canvas.width=1000g;//horizontal resolution (?) - increase for better looking text
 	canvas.height=200;//vertical resolution (?) - increase for better looking text
 	canvas.setAttribute("width", canvas.width);//actual width of canvas
 	canvas.setAttribute("height", canvas.height);//actual width of canvas
