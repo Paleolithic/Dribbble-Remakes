@@ -85,6 +85,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'copy', 'watch']);
+	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'copy', 'sass', 'watch']);
 	grunt.registerTask('production', ['concat', 'uglify', 'imagemin']);
 }
