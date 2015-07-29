@@ -21,7 +21,7 @@ module.exports = function(grunt){
 		        files: [{
 		            expand: true,
 		            cwd: 'src/images',
-		            src: ['**/*.{png,jpg,gif,svg}'],
+		            src: ['**/*.{png,jpg,gif,svg,ico}'],
 		            dest: 'dist/images/'
 		        }]
 		    }
@@ -86,5 +86,5 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
 	grunt.registerTask('default', ['concat', 'uglify', 'imagemin', 'copy', 'sass', 'watch']);
-	grunt.registerTask('production', ['concat', 'uglify', 'imagemin']);
+	grunt.registerTask('build', ['concat', 'uglify', 'imagemin', 'copy', 'sass']);
 }

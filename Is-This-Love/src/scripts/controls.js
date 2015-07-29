@@ -6,6 +6,7 @@ var elapsedTime = document.getElementById("elapsed-time");
 var totalTime 	= document.getElementById("total-time");
 var back 		= document.getElementById("back");
 var forward 	= document.getElementById("forward");
+var favicon 	= document.getElementById("favicon");
 
 var playing 	= false;
 var repeating	= false;
@@ -65,10 +66,12 @@ playPause.addEventListener("click", function(){
 	playing = !playing;
 
 	if(playing){
+		favicon.href = "dist/images/playing.ico";
 		audioPlayer.play();
 		// renderFrame();
 		i = setInterval(checkTime, 1000);
 	} else{
+		favicon.href = "dist/images/paused.ico";
 		audioPlayer.pause();
 		clearInterval(i);
 	}
