@@ -236,14 +236,24 @@ function frameLooper(){
 	fbc_array = new Uint8Array(analyser.frequencyBinCount);
 	analyser.getByteFrequencyData(fbc_array);
 	ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-	ctx.fillStyle = '#3B3644'; // Color of the bars
-	
-	bars = 200;
-	for (var i = 0; i < bars; i++) {
-		bar_x = i * 5;
-		bar_width = 4;
-		bar_height = -(fbc_array[i] / 2);
-		//  fillRect( x, y, width, height ) // Explanation of the parameters below
-		ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+  
+  bars = 200;
+  for (var i = 0; i < bars; i++){
+    bar_x = i * 5;
+    bar_width = 4;
+    bar_height = -(fbc_array[i] / 2);
+
+    //  fillRect( x, y, width, height ) // Explanation of the parameters below
+    if(bar_height <= -120){
+      console.log("More than 120");
+      // ctx.fillStyle =l '#3B3644'; // Color of the bars
+      // ctx.fillRect(bar_x, canvas.height, bar_width, -120);
+      ctx.fillStyle = '#F36A90'; // Color of the bars
+      ctx.fillRect(bar_x, 120, bar_width, bar_height+120);
+    }
+    else{
+      ctx.fillStyle = '#3B3644'; // Color of the bars
+		  ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+    }
 	}
 }

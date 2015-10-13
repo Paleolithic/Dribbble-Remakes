@@ -1,3 +1,6 @@
+@import "bourbon";
+@import "neat";
+
 html, body{
     width: 100%;
     height: 100%;
@@ -9,3 +12,35 @@ html, body{
     box-sizing: border-box;
 }
 
+.container{ 
+	@include outer-container; 
+	position: relative;
+    top: 50%;
+	transform: translateY(-50%);
+}
+
+.columns-span{ 
+	@include span-columns(4); 
+	@include shift(4);
+	position: relative;
+}
+
+.app{
+	background-color: silver;
+	height: 520px;
+}
+
+nav{
+	width: 100%;
+	height: 49px;
+	background-color: blue;
+
+	h3{
+		margin: 0;
+	}
+}
+.hamburger{
+	width: 28px;
+	height: 28px;
+	float: left;
+}

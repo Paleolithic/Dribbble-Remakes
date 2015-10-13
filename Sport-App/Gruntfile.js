@@ -30,7 +30,9 @@ module.exports = function(grunt){
 		sass: {
 		    dist: {
 		        options: {
-		            style: 'compressed'
+		            style: 'compressed',
+		            loadPath: require('node-bourbon').includePaths,
+		            loadPath: require('node-neat').includePaths
 		        },
 		        files: {
 		            'dist/main.css': 'src/stylesheets/main.scss'
