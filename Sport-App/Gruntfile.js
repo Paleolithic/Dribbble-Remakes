@@ -43,8 +43,7 @@ module.exports = function(grunt){
 		copy: {
 			main: {
 				files: [
-					{expand: true, flatten: true, src: ['src/*.mp3'], dest: 'dist/'},
-					{expand: true, flatten: true, src: ['src/*.json'], dest: 'dist/'},
+					{expand: true, flatten: true, src: ['src/fonts/*'], dest: 'dist/fonts'},
 				],
 			},
 		},
